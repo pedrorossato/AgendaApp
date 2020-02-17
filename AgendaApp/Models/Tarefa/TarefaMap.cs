@@ -13,7 +13,7 @@ namespace AgendaApp.Models.Tarefa
             Id(x => x.id);
             Map(x =>x.titulo);
             Map(x =>x.descricao);
-            Map(x => x.cadastrado_em);
+            Map(x =>x.cadastrado_em);
             Map(x =>x.dataentrega);
             Map(x =>x.concluida);
             Table("tarefas");

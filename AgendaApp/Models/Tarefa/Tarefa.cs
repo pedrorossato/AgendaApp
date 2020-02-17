@@ -10,8 +10,12 @@ namespace AgendaApp.Models.Tarefa
         public virtual int id { get; set; }
         public virtual string titulo { get; set; }
         public virtual string descricao { get; set; }
-        public virtual DateTime cadastrado_em { get; set; }
+        public virtual DateTime cadastrado_em { get; }
         public virtual DateTime dataentrega { get; set; }
         public virtual bool concluida { get; set; }
+        public Tarefa()
+        {
+            cadastrado_em = DateTime.UtcNow;
+        }
     }
 }
