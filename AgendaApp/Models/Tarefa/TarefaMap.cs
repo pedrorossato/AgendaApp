@@ -16,6 +16,7 @@ namespace AgendaApp.Models.Tarefa
             Map(x =>x.cadastrado_em);
             Map(x =>x.dataentrega);
             Map(x =>x.concluida);
+            HasMany(x => x.Arquivos);
             Table("tarefas");
         }
     }
