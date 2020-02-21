@@ -196,12 +196,15 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArquivoController.cs" />
+    <Compile Include="Controllers\SubtarefaController.cs" />
     <Compile Include="Controllers\TarefaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Arquivo\Arquivo.cs" />
     <Compile Include="Models\Arquivo\ArquivoMap.cs" />
+    <Compile Include="Models\Subtarefa\SubtarefaMap.cs" />
+    <Compile Include="Models\Subtarefa\Subtarefa.cs" />
     <Compile Include="Models\Tarefa\TarefaMap.cs" />
     <Compile Include="Models\Tarefa\Tarefa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -219,6 +222,16 @@
     <Content Include="Views\Tarefa\Create.cshtml" />
     <Content Include="Views\Tarefa\Edit.cshtml" />
     <Content Include="Views\Tarefa\Delete.cshtml" />
+    <Content Include="Views\Arquivo\Create.cshtml" />
+    <Content Include="Views\Arquivo\Index.cshtml" />
+    <Content Include="Views\Arquivo\Details.cshtml" />
+    <Content Include="Views\Arquivo\Delete.cshtml" />
+    <Content Include="Views\Arquivo\Edit.cshtml" />
+    <Content Include="Views\Subtarefa\Index.cshtml" />
+    <Content Include="Views\Subtarefa\Edit.cshtml" />
+    <Content Include="Views\Subtarefa\Details.cshtml" />
+    <Content Include="Views\Subtarefa\Create.cshtml" />
+    <Content Include="Views\Subtarefa\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -228,7 +241,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Arquivo\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

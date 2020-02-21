@@ -6,11 +6,12 @@ using System.Web;
 
 namespace AgendaApp.Models
 {
-    public class Arquivo
+    public class Subtarefa
     {
         public virtual int id { get; set; }
-        [Display(Name = "Caminho")]
-        public virtual string path { get; set; }
-        public virtual Tarefa tarefaid { get; set; }
+        [Display(Name = "Título")]
+        public virtual string titulo { get; set; }
+        public virtual bool concluida { get; set; }
+        public virtual Tarefa tarefa { get; set; }
     }
 }

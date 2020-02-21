@@ -8,37 +8,37 @@ using System.Web.Mvc;
 
 namespace AgendaApp.Controllers
 {
-    public class ArquivoController : Controller
+    public class SubtarefaController : Controller
     {
-        // GET: Arquivo
+        // GET: Subtarefa
         public ActionResult Index()
         {
             using (ISession session = SessionFactory.AbrirSession())
             {
-                var arquivos = session.Query<Arquivo>().ToList();
-                return View(arquivos);
+                var subtarefas = session.Query<Subtarefa>().ToList();
+                return View(subtarefas);
             }
         }
 
-        // GET: Arquivo/Details/5
+        // GET: Subtarefa/Details/5
         public ActionResult Details(int id)
         {
             using (ISession session = SessionFactory.AbrirSession())
             {
-                var arquivos = session.Get<Arquivo>(id);
-                return View(arquivos);
+                var subtarefas = session.Get<Subtarefa>(id);
+                return View(subtarefas);
             }
         }
 
-        // GET: Arquivo/Create
+        // GET: Subtarefa/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Arquivo/Create
+        // POST: Subtarefa/Create
         [HttpPost]
-        public ActionResult Create(Arquivo arquivo)
+        public ActionResult Create(Subtarefa subtarefa)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace AgendaApp.Controllers
                 {
                     using (ITransaction transaction = session.BeginTransaction())
                     {
-                        session.Save(arquivo);
+                        session.Save(subtarefa);
                         transaction.Commit();
                     }
                 }
@@ -58,29 +58,30 @@ namespace AgendaApp.Controllers
             }
         }
 
-        // GET: Arquivo/Edit/5
+        // GET: Subtarefa/Edit/5
         public ActionResult Edit(int id)
         {
             using (ISession session = SessionFactory.AbrirSession())
             {
-                var arquivo = session.Get<Arquivo>(id);
-                return View(arquivo);
+                var subtarefa = session.Get<Tarefa>(id);
+                return View(subtarefa);
             }
         }
 
-        // POST: Arquivo/Edit/5
+        // POST: Subtarefa/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Arquivo arquivo)
+        public ActionResult Edit(int id, Subtarefa subtarefa)
         {
             try
             {
                 using (ISession session = SessionFactory.AbrirSession())
                 {
-                    var arquivoeditado = session.Get<Arquivo>(id);
-                    arquivoeditado.path = arquivo.path;
+                    var subtarefalterada = session.Get<Subtarefa>(id);
+                    subtarefalterada.titulo = subtarefa.titulo;
+                    subtarefalterada.concluida = subtarefa.concluida;
                     using (ITransaction transaction = session.BeginTransaction())
                     {
-                        session.Save(arquivoeditado);
+                        session.Save(subtarefalterada);
                         transaction.Commit();
                     }
                 }
@@ -93,19 +94,19 @@ namespace AgendaApp.Controllers
             }
         }
 
-        // GET: Arquivo/Delete/5
+        // GET: Subtarefa/Delete/5
         public ActionResult Delete(int id)
         {
             using (ISession session = SessionFactory.AbrirSession())
             {
-                var arquivo = session.Get<Arquivo>(id);
-                return View(arquivo);
+                var subtarefa = session.Get<Tarefa>(id);
+                return View(subtarefa);
             }
         }
 
-        // POST: Arquivo/Delete/5
+        // POST: Subtarefa/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, Arquivo arquivo)
+        public ActionResult Delete(int id, Subtarefa subtarefa)
         {
             try
             {
@@ -113,7 +114,7 @@ namespace AgendaApp.Controllers
                 {
                     using (ITransaction transaction = session.BeginTransaction())
                     {
-                        session.Delete(arquivo);
+                        session.Delete(subtarefa);
                         transaction.Commit();
                     }
                 }

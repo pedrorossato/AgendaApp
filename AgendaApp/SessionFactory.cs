@@ -1,4 +1,4 @@
-﻿using AgendaApp.Models.Tarefa;
+﻿using AgendaApp.Models;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;

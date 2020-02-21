@@ -1,4 +1,4 @@
-﻿using AgendaApp.Models.Tarefa;
+﻿using AgendaApp.Models;
 using NHibernate;
 using System;
 using System.Collections.Generic;
@@ -63,8 +63,8 @@ namespace AgendaApp.Controllers
         {
             using (ISession session = SessionFactory.AbrirSession())
             {
-                var aluno = session.Get<Tarefa>(id);
-                return View(aluno);
+                var tarefa = session.Get<Tarefa>(id);
+                return View(tarefa);
             }
         }
 

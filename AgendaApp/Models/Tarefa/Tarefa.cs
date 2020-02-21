@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 
-namespace AgendaApp.Models.Tarefa
+namespace AgendaApp.Models
 {
     public class Tarefa
     {
@@ -22,6 +22,7 @@ namespace AgendaApp.Models.Tarefa
         [Display(Name = "Concluida")]
         public virtual bool concluida { get; set; }
         public virtual IList<Arquivo> Arquivos { get; set; }
+        public virtual IList<Subtarefa> Subtarefas { get; set; }
         public Tarefa()
         {
             cadastrado_em = DateTime.Now;
